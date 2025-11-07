@@ -1,0 +1,10 @@
+Rule,Details,Impact
+Avoid when Is_Consolidating is in losing range,Is_Consolidating < 0.01,66.0% difference
+Avoid when Consolidation_Score is in losing range,Consolidation_Score < 0.10,16.2% difference
+Avoid when EMA_21_Above_50 is in losing range,EMA_21_Above_50 < 0.54,13.0% difference
+Avoid when Is_Tight_Range is in losing range,Is_Tight_Range < 0.19,12.7% difference
+Avoid when RangeSize is in losing range,RangeSize < 5.60,11.2% difference
+"Avoid EMA alignment pattern: EMA9_Above_21=1, EMA21_Above_50=0, Price_Above_200=0",Win Rate: 18.2%,Only 18.2% win rate
+"Avoid EMA alignment pattern: EMA9_Above_21=0, EMA21_Above_50=1, Price_Above_200=0",Win Rate: 23.5%,Only 23.5% win rate
+"Avoid EMA alignment pattern: EMA9_Above_21=0, EMA21_Above_50=0, Price_Above_200=1",Win Rate: 32.4%,Only 32.4% win rate
+Avoid Risk range: 0-5,Win Rate: 33.0%,Low win rate in this risk range

@@ -1,0 +1,69 @@
+2025-11-06 23:48:00.596114: I external/local_xla/xla/tsl/cuda/cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+2025-11-06 23:48:04.656548: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2025-11-06 23:48:38.546755: I external/local_xla/xla/tsl/cuda/cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+2025-11-06 23:48:55.449122: E external/local_xla/xla/stream_executor/cuda/cuda_platform.cc:51] failed call to cuInit: INTERNAL: CUDA error: Failed call to cuInit: UNKNOWN ERROR (303)
+✅ Mixed precision enabled (FP16) - 2x faster, 2x less memory
+================================================================================
+ULTRA-DEEP TRANSFORMER SYSTEM - 5000+ LAYERS
+================================================================================
+Architecture: ResNet + DenseNet + Transformer Blocks
+Optimizations: Mixed Precision, Gradient Clipping, Optimized Batch Size
+================================================================================
+
+1. Loading and combining all data...
+   Total trades: 913
+   Wins: 330 (36.1%)
+   Losses: 583 (63.9%)
+
+2. Creating ultimate feature set (200+ features)...
+   Total features: 103
+
+3. Splitting data...
+   Training: 547 (59.9%)
+   Validation: 183 (20.0%)
+   Test: 183 (20.0%)
+
+================================================================================
+4. BUILDING ULTRA-DEEP MODEL (5000+ LAYERS)
+Architecture: ResNet (2000 layers) + Transformer (1000 layers) + DenseNet (100 layers)
+================================================================================
+
+   Building ResNet blocks (2000 layers)...
+      Built 200 residual blocks...
+      Built 400 residual blocks...
+      Built 600 residual blocks...
+      Built 800 residual blocks...
+      Built 1000 residual blocks...
+   ✅ Built 1000 residual blocks (2000 layers)
+
+   Reshaping for Transformer blocks...
+Traceback (most recent call last):
+  File "/home/nyale/Desktop/ML TESTING/ultra_deep_transformer.py", line 378, in <module>
+    x_expanded = tf.expand_dims(x, axis=1)  # (batch, 1, features)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nyale/.local/lib/python3.12/site-packages/tensorflow/python/ops/weak_tensor_ops.py", line 88, in wrapper
+    return op(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/nyale/.local/lib/python3.12/site-packages/tensorflow/python/util/traceback_utils.py", line 153, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "/home/nyale/.local/lib/python3.12/site-packages/keras/src/backend/common/keras_tensor.py", line 194, in __tf_tensor__
+    raise ValueError(
+ValueError: A KerasTensor cannot be used as input to a TensorFlow function. A KerasTensor is a symbolic placeholder for a shape and dtype, used when constructing Keras Functional models or Keras Functions. You can only use it as input to a Keras layer or a Keras operation (from the namespaces `keras.layers` and `keras.ops`). You are likely doing something like:
+
+```
+x = Input(...)
+...
+tf_fn(x)  # Invalid.
+```
+
+What you should do instead is wrap `tf_fn` in a layer:
+
+```
+class MyLayer(Layer):
+    def call(self, x):
+        return tf_fn(x)
+
+x = MyLayer()(x)
+```
+

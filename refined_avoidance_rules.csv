@@ -1,0 +1,4 @@
+Rule,Pattern,WinRate,AvgP&L,Count
+EMA Pattern,100,18.0%,$-3.89,33
+EMA Pattern,010,24.0%,$-1.59,17
+Risk Range,0-5,33.0%,$-0.09,287
