@@ -1,0 +1,7 @@
+Mode,Trades,WinRate%,AvgR,TotalPnL,ProfitFactor
+baseline_breakout,773,38.42,0.153,3519.24,1.28
+pullback_ema,557,38.78,0.163,908.33,1.16
+pullback_ema_reversal,860,49.53,0.486,2783.23,1.47
+pullback_only,799,33.79,0.014,743.85,1.07
+reversal_failed_move,297,60.27,0.808,1036.41,3.36
+reversal_only,610,58.52,0.756,3489.52,3.18

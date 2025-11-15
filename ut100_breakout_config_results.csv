@@ -1,0 +1,7 @@
+Config,Trades,WinRate%,AvgR,TotalPnL,ProfitFactor
+Config_A_EMA_RSI_Body,20,40.0,0.2,72.28,1.27
+Config_B_EMAStack_ATR_Body,12,41.67,0.25,242.38,2.02
+Config_C_RSILead_Stoch,5,40.0,0.2,-2.26,0.97
+Config_D_CandlePattern,4,75.0,1.25,302.49,4.35
+Config_E_HighVol_Body,28,42.86,0.286,239.72,1.11
+Config_F_LowVol_TightRange,0,0.0,0.0,0.0,0.0

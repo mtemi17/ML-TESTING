@@ -1,0 +1,6 @@
+config,params,completed,wins,losses,win_rate,avg_r,pnl,filter_exits
+1,"{'max_retest_depth_r': 1.2, 'max_retest_bars': 12, 'first_bar_min_gain': -0.2}",11,11,0,100.0,1.9999999999999927,2.7527999999999793,341
+2,"{'max_retest_depth_r': 1.2, 'max_retest_bars': 12, 'first_bar_min_gain': -0.2, 'breakout_max_mae_ratio': 0.7}",11,11,0,100.0,1.9999999999999927,2.7527999999999793,341
+3,"{'max_retest_depth_r': 1.2, 'max_retest_bars': 12, 'first_bar_min_gain': -0.2, 'max_atr_ratio': 1.4}",11,11,0,100.0,2.0000000000000018,2.7959999999999923,347
+4,"{'max_retest_depth_r': 1.2, 'max_retest_bars': 12, 'first_bar_min_gain': -0.2, 'min_trend_score': 0.5}",11,11,0,100.0,1.9999999999999927,2.7527999999999793,341
+5,"{'max_retest_depth_r': 1.2, 'max_retest_bars': 12, 'first_bar_min_gain': -0.2, 'breakout_max_mae_ratio': 0.7, 'max_atr_ratio': 1.4, 'min_trend_score': 0.5}",11,11,0,100.0,2.0000000000000018,2.7959999999999923,347

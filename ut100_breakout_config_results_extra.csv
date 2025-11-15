@@ -1,0 +1,5 @@
+Config,Trades,WinRate%,AvgR,TotalPnL,ProfitFactor
+Config_G_EMA_RSI_Dist,6,66.67,1.0,367.17,4.24
+Config_H_EMAStack_Stoch,22,36.36,0.091,-19.35,0.94
+Config_I_MidBody_MidATR,9,44.44,0.333,111.53,1.49
+Config_J_StrongBody_LowWick,18,33.33,0.0,21.39,1.09

@@ -1,0 +1,23 @@
+{
+  "Data_Quality": {
+    "Total_Candles": 6348,
+    "Expected_Candles": 8928,
+    "Missing_Candles": 2580,
+    "Missing_Percent": 28.897849462365592,
+    "Trading_Days": 23,
+    "Missing_Weekends": 8
+  },
+  "Window_Analysis": {
+    "Windows_Found": 42,
+    "Expected_Windows": 69,
+    "Dates_With_Windows": 18
+  },
+  "Backtest_Results": {
+    "Total_Trades": 42,
+    "Completed_Trades": 8,
+    "Wins": 8,
+    "Losses": 0,
+    "Win_Rate": 100.0,
+    "Total_PnL": 148.93200000000024
+  }
+}

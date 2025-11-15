@@ -75,7 +75,7 @@ def prepare_features(df: pd.DataFrame) -> tuple[np.ndarray, np.ndarray, List[str
     if "Price_Above_EMA200_5M" not in df.columns and "PriceAboveEMA200_5M" in df.columns:
         df["Price_Above_EMA200_5M"] = df["PriceAboveEMA200_5M"]
 
-    categorical_cols = ["EntryType", "Type", "WindowType", "WindowID"]
+    categorical_cols = ["EntryType", "Type", "WindowType", "WindowID", "Mode", "Market"]
 
     for col in categorical_cols:
         if col not in df.columns:
@@ -83,7 +83,7 @@ def prepare_features(df: pd.DataFrame) -> tuple[np.ndarray, np.ndarray, List[str
         df[col] = df[col].fillna("UNKNOWN").astype(str)
 
     df_numeric = df[feature_cols].copy()
-    df_numeric = df_numeric.fillna(df_numeric.median())
+    df_numeric = df_numeric.fillna(df_numeric.median()).fillna(0.0)
 
     scaler = RobustScaler()
     X_numeric = scaler.fit_transform(df_numeric)
@@ -174,6 +174,10 @@ def train_and_evaluate(csv_path: Path, output_dir: Path, config: TrainingConfig)
         ),
     ]
 
+    from sklearn.utils.class_weight import compute_class_weight
+    class_weights = compute_class_weight(class_weight="balanced", classes=np.unique(y_train), y=y_train)
+    class_weight_dict = {cls: weight for cls, weight in zip(np.unique(y_train), class_weights)}
+
     history = model.fit(
         X_train,
         y_train,
@@ -181,6 +185,7 @@ def train_and_evaluate(csv_path: Path, output_dir: Path, config: TrainingConfig)
         epochs=config.epochs,
         batch_size=config.batch_size,
         callbacks=callbacks,
+        class_weight=class_weight_dict,
         verbose=2,
     )
 

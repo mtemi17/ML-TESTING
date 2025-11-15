@@ -1,0 +1,30 @@
+TROUBLESHOOTING COMPILATION ERRORS
+===================================
+
+The errors you're seeing reference old line numbers and variables that don't exist in the current file.
+This indicates the MQL5 compiler is using cached/old code.
+
+SOLUTION STEPS:
+---------------
+1. Close MetaEditor completely
+2. Delete any .ex5 files in the MQL5/Experts folder
+3. Reopen MetaEditor
+4. Open the file: debugg/EA_CHARGER.mq5
+5. Press F7 to compile
+
+ALTERNATIVE: If errors persist
+--------------------------------
+1. In MetaEditor: Tools -> Options -> Compiler
+2. Check "Clear cache before compilation"
+3. Press F7 to compile
+
+VERIFY CURRENT CODE:
+--------------------
+The current file should have:
+- Line 274-275: ulong dealTicketId = 0; dealTicketId = (ulong)trans.deal;
+- Line 295: ulong positionId = HistoryDealGetInteger(dealTicketId, DEAL_POSITION_ID);
+- Line 304: long dealReasonCode = (long)HistoryDealGetInteger(dealTicketId, DEAL_REASON);
+- Line 735: ulong ticketValue = trade.ResultTicket();
+
+If you see different code, the file hasn't been saved or the compiler is using cache.
+
